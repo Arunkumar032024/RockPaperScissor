@@ -6,3 +6,108 @@
     box-sizing: border-box;
     font-family: "PT Serif", serif;
 }
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5EFE6;
+}
+
+.container{
+    width: 95%;
+    max-width: 480px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 3px 3px 0 0 #1A4D2E;
+    background-color: #E8DFCA;
+}
+
+.container h1{
+    font-size: 1.725rem;
+    text-align: center;
+    text-decoration: underline;
+    color: #1A4D2E;
+}
+
+.score-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+}
+.score-box p{
+    color: #1A4D2E;
+    font-size: 1.125rem;
+    font-weight: 700;
+    border: 2px solid #1A4D2E;
+    padding: 5px;
+    border-radius: 3px;
+}
+.weapon-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.weapon-box div{
+    cursor: pointer;
+}
+.weapon-box img{
+    width: 60px;
+    height: 60px;    
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.weapon-box div span{
+    color: #1A4D2E;
+    font-style: 12px;
+    font-weight: 700;
+}
+
+.container > p{
+    text-align: center;
+    margin: 1rem auto;
+    color: #1A4D2E;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttons .btn{
+    margin: 2rem auto;
+    outline: 0;
+    border: 2px solid #1A4D2E;
+    padding: 6px 20px;
+    border-radius: 3px;
+    background-color: #1A4D2E;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #E8DFCA;
+    cursor: pointer;
+}
+.btn:hover{
+    filter: brightness(1.2);
+}
+.btn:active{
+    transform: scale(0.98);
+}
+
+
+.hide{
+    display: none;
+}
+.pointer-none{
+    pointer-events: none;
+}

@@ -5,3 +5,5 @@ Creating a Rock Paper Scissors game app using HTML, CSS, and JavaScript is a fun
 Basic file setup
 <br>
 Add favicon icon
+<br>
+Add images like rock, paper, and scissor
