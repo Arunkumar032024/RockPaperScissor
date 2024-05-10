@@ -19,16 +19,16 @@
             <p>Computer: <span id="computer-score">0</span></p>
         </div>
         <div class="weapon-box">
-            <div><img src="images/rock.png" alt="rock" /><span>Rock</span></div>
-            <div><img src="images/paper.png" alt="paper" /><span>Paper</span></div>
-            <div><img src="images/scissors.png" alt="scissor" /><span>Scissor</span></div>
+            <div id="rock" class="pointer-none"><img src="images/rock.png" alt="rock" /><span>Rock</span></div>
+            <div id="paper" class="pointer-none"><img src="images/paper.png" alt="paper" /><span>Paper</span></div>
+            <div id="scissor" class="pointer-none"><img src="images/scissors.png" alt="scissor" /><span>Scissor</span></div>
         </div>
         <p>Choose your weapon!</p>
         <p>Time left: <span class="time">7</span>s</p>
         <div class="buttons">
-            <button class="btn hide">Play Again</button>
-            <button class="btn">Play</button>
-            <button class="btn hide">Pause</button>
+            <button class="btn hide" id="play-again-btn">Play Again</button>
+            <button class="btn" id="play-btn">Play</button>
+            <button class="btn hide" id="pause-btn">Pause</button>
         </div>
         
     </div>
