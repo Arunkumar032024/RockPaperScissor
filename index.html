@@ -13,27 +13,29 @@
 </head>
 <body>
     <div class="container">
+        <audio >
+            <source src="" type="audio/mp3" />
+        </audio>
         <h1>Rock Paper Scissor</h1>
         <div class="score-box">
-            <p>You: <span id="player-weapon">weapon</span></p>
-            <p>Computer: <span id="computer-weapon">weapon</span></p>
+            <p>You: <span id="player-weapon">0</span></p>
+            <p>Computer: <span id="computer-weapon">0</span></p>
         </div>
         <div class="weapon-box">
             <div id="rock" class="pointer-none"><img src="images/rock.png" alt="rock" /><span>Rock</span></div>
             <div id="paper" class="pointer-none"><img src="images/paper.png" alt="paper" /><span>Paper</span></div>
             <div id="scissor" class="pointer-none"><img src="images/scissors.png" alt="scissor" /><span>Scissor</span></div>
         </div>
-        <p>Choose your weapon!</p>
-        <p>Time left: <span class="time">7</span>s</p>
-        <div class="buttons">
-            <button class="btn" id="play-btn">Play</button>
-        </div>
+        <p id="choose-weapon" class="hide">Choose your weapon!</p>
+        <button class="btn" id="play-btn">Play</button>
     </div>
 
     <div class="result hide">
-        <h3></h3>
-        <p></p>
-        <button class="btn" id="play-again-btn">Play Again</button>
+        <h3 id="status">You Win</h3>
+        <p id="description">you choose roce computer choose paper</p>
+        <p id="msg">paper beats rock</p>
+        <button class="btn" id="continue-btn">Continue</button>
+        <button class="btn" id="restart-btn">Restart</button>
     </div>
     <!-- js file -->
     <script src="app.js"></script>
