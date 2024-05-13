@@ -5,11 +5,13 @@ chooseWeaponPara = document.querySelector("#choose-weapon"),
 imageDivs = document.querySelectorAll(".weapon-box div"),
 rockImage = document.querySelector("#rock"),
 paperImage = document.querySelector("#paper"),
-scissorImage = document.querySelector("#scissor");
+scissorImage = document.querySelector("#scissor"),
+tone = document.querySelector("audio");
 let [comWeapon, playerWeapon, comScore, playerScore] = ["", "", 0, 0];
 
 let computerWeaponScore = document.querySelector("#computer-weapon");
 let playerWeaponScore = document.querySelector("#player-weapon");
+
 
 
 
@@ -26,16 +28,15 @@ restartBtn.addEventListener("click", ()=>{
 
 
 function saveScoreFun(){
-    localStorage.setItem("comScore", computerWeaponScore.innerText);
-    localStorage.setItem("playerScore", playerWeaponScore.innerText);
-    // localStorage.setItem("data", document.querySelector(".score-box").innerHTML) 
+    localStorage.setItem("comScorelocal", comScore);
+    localStorage.setItem("playerScorelocal", playerScore);
 }
 
 function showScoreFun(){
-    playerWeaponScore = localStorage.getItem("playerScore");
-    computerWeaponScore = localStorage.getItem("comScore");
-    // document.querySelector(".score-box").innerHTML = localStorage.getItem("data")
+    playerWeaponScore = localStorage.getItem("playerScorelocal");
+    computerWeaponScore = localStorage.getItem("comScorelocal");
 }
+
 
 showScoreFun();
 
@@ -44,7 +45,9 @@ continueBtn.addEventListener("click", ()=>{
 })
 
 
-function resultShowFun(theme, status, description, msg, btn1, btn2){
+function resultShowFun(theme, status, description, msg, btn1, btn2, ring){
+    tone.src = ring;
+    tone.play();
     document.querySelector(".result").classList.remove("hide");
     document.querySelector(".result").classList.remove("win");
     document.querySelector(".result").classList.remove("lose");
@@ -60,35 +63,34 @@ function resultShowFun(theme, status, description, msg, btn1, btn2){
 function updateScorePrint(){
     document.querySelector("#player-weapon").innerText = playerScore;
     document.querySelector("#computer-weapon").innerText = comScore;
-    
 }
 
 function updateScoreFun(){
     console.log(comWeapon, playerWeapon)
-    if(playerScore === "rock" && comWeapon === "rock"){
-        resultShowFun("tie", "Game Tie", "You choose 'rock' and computer also choose 'rock'", "Nobody beats someone", "block", "none");
+    if(playerWeapon === "rock" && comWeapon === "rock"){
+        resultShowFun("tie", "Game Tie", "You choose 'rock' and computer also choose 'rock'", "Nobody beats someone", "block", "none", "tone/tie.wav");
     }else if(playerWeapon === "rock" && comWeapon === "paper"){
         comScore++;
-        resultShowFun("lose", "You Lose", "You choose 'rock' and computer choose 'paper'", "paper beats rock", "block", "block");
+        resultShowFun("lose", "You Lose", "You choose 'rock' and computer choose 'paper'", "paper beats rock", "block", "block", "tone/lose.wav");
     }else if(playerWeapon === "rock" && comWeapon === "scissor"){
         playerScore++;
-        resultShowFun("win", "You Win", "You choose 'rock' and computer choose 'scissor'", "rock beats scissor", "block", "block");
+        resultShowFun("win", "You Win", "You choose 'rock' and computer choose 'scissor'", "rock beats scissor", "block", "block", "tone/win.wav");
     }else if(playerWeapon === "paper" && comWeapon === "rock"){
         playerScore++;
-        resultShowFun("win", "You Win", "You choose 'paper' and computer choose 'rock'", "paper beats rock", "block", "block");
+        resultShowFun("win", "You Win", "You choose 'paper' and computer choose 'rock'", "paper beats rock", "block", "block", "tone/win.wav");
     }else if(playerWeapon === "paper" && comWeapon === "paper"){
-        resultShowFun("tie", "Game Tie", "You choose 'paper' and computer also choose 'paper'", "Nobody beats someone", "block", "none");
+        resultShowFun("tie", "Game Tie", "You choose 'paper' and computer also choose 'paper'", "Nobody beats someone", "block", "none", "tone/tie.wav");
     }else if(playerWeapon === "paper" && comWeapon === "scissor"){
         playerScore++;
-        resultShowFun("win", "You Win", "You choose 'paper' and computer choose 'scissor'", "paper beats scissor", "block", "block");
+        resultShowFun("win", "You Win", "You choose 'paper' and computer choose 'scissor'", "paper beats scissor", "block", "block", "tone/win.wav");
     }else if(playerWeapon === "scissor" && comWeapon === "rock"){
         comScore++;
-        resultShowFun("lose", "You Lose", "You choose 'scissor' and computer choose 'rock'", "rock beats scissor", "block", "block");
+        resultShowFun("lose", "You Lose", "You choose 'scissor' and computer choose 'rock'", "rock beats scissor", "block", "block", "tone/lose.wav");
     }else if(playerWeapon === "scissor" && comWeapon === "paper"){
         comScore++;
-        resultShowFun("lose", "You Lose", "You choose 'scissor' and computer choose 'paper'", "scissor beats paper", "block", "block");
+        resultShowFun("lose", "You Lose", "You choose 'scissor' and computer choose 'paper'", "scissor beats paper", "block", "block", "tone/lose.wav");
     }else if(playerWeapon === "scissor" && comWeapon === "scissor"){
-        resultShowFun("tie", "Game Tie", "You choose 'scissor' and computer also choose 'scissor'", "Nobody beats someone", "block", "none");
+        resultShowFun("tie", "Game Tie", "You choose 'scissor' and computer also choose 'scissor'", "Nobody beats someone", "block", "none", "tone/tie.wav");
     }
     updateScorePrint();
 }
