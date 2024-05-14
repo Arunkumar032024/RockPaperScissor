@@ -7,3 +7,5 @@ Basic file setup
 Add favicon icon
 <br>
 Add images like rock, paper, and scissor
+<br>
+Add functionality
