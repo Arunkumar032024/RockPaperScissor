@@ -47,6 +47,8 @@ function resultShowFun(theme, status, description, msg, btn1, btn2, ring){
 
 // function for updateScore 
 function updateScoreFun(){
+    comScore = document.querySelector("#computer-weapon").innerText;
+    playerScore = document.querySelector("#player-weapon").innerText;
     if(playerWeapon === "rock" && comWeapon === "rock"){
         resultShowFun("tie", "Game Tie", "You choose 'rock' and computer also choose 'rock'", "Nobody beats someone", "block", "none", "tone/tie.wav");
     }else if(playerWeapon === "rock" && comWeapon === "paper"){
