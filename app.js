@@ -10,7 +10,7 @@ tone = document.querySelector("audio");
 
 // click on restart button score set by 0
 restartBtn.addEventListener("click", ()=>{
-    let userWants = confirm("If you restart the game your score settled by 0:")
+    let userWants = confirm("If you restart the game your score set by 0:")
     console.log(userWants)
     if(userWants){
         [comScore, playerScore] = [0, 0];
