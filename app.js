@@ -7,6 +7,8 @@ rockImage = document.querySelector("#rock"),
 paperImage = document.querySelector("#paper"),
 scissorImage = document.querySelector("#scissor"),
 tone = document.querySelector("audio");
+let comScore =0, playerScore=0;
+saveScore() 
 
 // click on restart button score set by 0
 restartBtn.addEventListener("click", ()=>{
